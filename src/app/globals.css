@@ -2,7 +2,6 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ── Light-mode variables (default — current design, untouched) ── */
 :root {
   --background: #FFF8F0;
   --foreground: #1E1E2F;
@@ -22,7 +21,6 @@
   --heading: #2B2D6E;
 }
 
-/* ── Dark-mode variables ── */
 .dark {
   --background: #0F1020;
   --foreground: #F4F1EA;
@@ -42,7 +40,6 @@
   --heading: #F4F1EA;
 }
 
-/* ── Expose variables as Tailwind theme tokens ── */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -61,7 +58,6 @@
   --color-skeleton: var(--skeleton);
   --color-heading: var(--heading);
 
-  /* Keep legacy token names mapped */
   --color-cream: var(--background);
   --color-ink: var(--foreground);
 
@@ -75,7 +71,6 @@ body {
   font-family: var(--font-inter), system-ui, sans-serif;
 }
 
-/* ── Dark-mode form inputs ── */
 .dark input,
 .dark textarea,
 .dark select {
@@ -89,12 +84,10 @@ body {
   color: var(--muted-foreground);
 }
 
-/* Dark-mode date / select picker indicator */
 .dark input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
 
-/* SweetAlert dark overrides */
 .dark .swal2-popup {
   background-color: var(--card) !important;
   color: var(--foreground) !important;

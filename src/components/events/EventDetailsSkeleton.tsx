@@ -1,4 +1,3 @@
-// Loading skeleton for the event details page.
 import Skeleton from "@/components/shared/Skeleton";
 
 export default function EventDetailsSkeleton() {

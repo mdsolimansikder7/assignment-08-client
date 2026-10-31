@@ -1,4 +1,3 @@
-// Login form with show/hide password, email/password + Google sign-in.
 "use client";
 
 import { useState } from "react";
@@ -113,7 +112,6 @@ export default function LoginPage() {
         </Button>
       </form>
 
-      {/* Google sign-in */}
       <div className="mt-6">
         <button
           type="button"

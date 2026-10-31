@@ -1,4 +1,3 @@
-// Top navigation bar. Shows Login (logged out) or avatar + Logout (logged in).
 "use client";
 
 import { useState } from "react";
@@ -27,13 +26,11 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <LogoMark size={32} />
           <span className="font-heading text-xl font-bold text-primary">{SITE_NAME}</span>
         </Link>
 
-        {/* Desktop links */}
         <div className="hidden items-center gap-6 md:flex">
           <Link href="/events" className={linkClass("/events")}>
             Upcoming Events
@@ -56,7 +53,6 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile hamburger */}
         <button
           className="md:hidden text-primary"
           onClick={() => setMobileOpen((v) => !v)}
@@ -66,7 +62,6 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div className="border-t border-border bg-background px-4 py-4 md:hidden">
           <div className="flex flex-col gap-3">

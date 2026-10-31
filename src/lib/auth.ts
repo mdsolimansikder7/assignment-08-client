@@ -1,11 +1,9 @@
-// Better Auth server configuration (server-only).
 import { betterAuth } from "better-auth";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { jwt } from "better-auth/plugins";
 import { nextCookies } from "better-auth/next-js";
 import { MongoClient } from "mongodb";
 
-// Reuse the MongoClient across hot reloads in development.
 const globalForMongo = globalThis as unknown as { _mongoClient?: MongoClient };
 const mongoUri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017";
 const mongoClient =

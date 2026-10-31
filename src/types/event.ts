@@ -1,4 +1,3 @@
-// Event types and the main event shape.
 export type EventType =
   | "Cleanup"
   | "Plantation"
@@ -13,9 +12,9 @@ export type CommunityEvent = {
   title: string;
   description: string;
   eventType: EventType;
-  thumbnail: string; // image URL
+  thumbnail: string; 
   location: string;
-  eventDate: string; // "YYYY-MM-DD"
+  eventDate: string; 
   creatorEmail: string;
   creatorName?: string;
 };

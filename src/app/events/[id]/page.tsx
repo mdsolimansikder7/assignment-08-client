@@ -1,4 +1,3 @@
-// Event details page with a Join button and a not-found design.
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import Link from "next/link";

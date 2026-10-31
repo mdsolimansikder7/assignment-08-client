@@ -1,9 +1,7 @@
-// Real API helpers for the Humanova backend.
 import type { CommunityEvent } from "@/types/event";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
 
-// Data sent when creating or updating an event (creator identity comes from the token).
 export type EventInput = Omit<CommunityEvent, "_id" | "creatorEmail" | "creatorName">;
 
 type TokenResponse = { data?: { token?: string }; token?: string };

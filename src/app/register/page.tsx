@@ -1,4 +1,3 @@
-// Registration form with live password checklist and real Better Auth sign-up.
 "use client";
 
 import { useState } from "react";
@@ -150,7 +149,6 @@ export default function RegisterPage() {
         </Button>
       </form>
 
-      {/* Google sign-in */}
       <div className="mt-6">
         <button
           type="button"

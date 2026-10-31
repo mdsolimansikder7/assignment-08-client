@@ -1,4 +1,3 @@
-// Site-wide constants.
 export const SITE_NAME = "Humanova";
 
 export const EVENT_TYPES = [
@@ -20,7 +19,6 @@ export const FEATURES = [
   { title: "Real Local Impact", text: "Every action helps your neighborhood.", icon: "Sparkles" },
 ];
 
-// 8 static photos for the Gallery section.
 
 export const GALLERY_IMAGES = [
   "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=600&h=600&fit=crop",

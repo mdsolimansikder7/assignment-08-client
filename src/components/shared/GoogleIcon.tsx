@@ -1,5 +1,3 @@
-// Inline multicolor Google "G" logo (no icon package).
-// Brand colors are hardcoded as-is; never recolored or set to currentColor.
 type GoogleIconProps = {
   size?: number;
   className?: string;

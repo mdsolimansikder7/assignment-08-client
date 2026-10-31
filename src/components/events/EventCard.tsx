@@ -1,4 +1,3 @@
-// Event card with equal size, clamped text, and a View Event button.
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Calendar } from "lucide-react";

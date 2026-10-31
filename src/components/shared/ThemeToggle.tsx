@@ -1,4 +1,3 @@
-// Theme toggle button: switches between light and dark using next-themes.
 "use client";
 
 import { useSyncExternalStore } from "react";

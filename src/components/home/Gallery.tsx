@@ -1,4 +1,3 @@
-// Static grid of community-service photos, all the same size.
 import Image from "next/image";
 import { GALLERY_IMAGES } from "@/lib/constants";
 import SectionHeading from "@/components/shared/SectionHeading";

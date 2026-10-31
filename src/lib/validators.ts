@@ -1,4 +1,3 @@
-// Password rules used to show form errors.
 
 export function hasUppercase(value: string): boolean {
   return /[A-Z]/.test(value);
@@ -16,7 +15,6 @@ export function isPasswordValid(value: string): boolean {
   return hasUppercase(value) && hasLowercase(value) && hasMinLength(value);
 }
 
-// Returns a list of error messages for the given password.
 export function passwordErrors(value: string): string[] {
   const errors: string[] = [];
   if (!hasUppercase(value)) errors.push("Must include at least one uppercase letter.");

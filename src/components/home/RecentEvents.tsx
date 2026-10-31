@@ -1,4 +1,3 @@
-// Shows 6 recent upcoming events using MongoDB's .limit() operator, sorted by date.
 import Link from "next/link";
 import { getEvents } from "@/lib/api";
 import { getUpcomingEventsFromDb } from "@/lib/events-db";
@@ -13,10 +12,8 @@ export default async function RecentEvents() {
   let loadError = false;
 
   try {
-    // 1. Fetch 6 upcoming events via backend API (which uses MongoDB .limit(6))
     events = await getEvents({ limit: 6 });
   } catch {
-    // 2. Direct fallback to MongoDB using .limit(6) if backend API server is offline
     try {
       events = await getUpcomingEventsFromDb(6);
     } catch {
@@ -24,7 +21,6 @@ export default async function RecentEvents() {
     }
   }
 
-  // If API returned empty array, try direct DB query as fallback
   if (events.length === 0 && !loadError) {
     try {
       const dbEvents = await getUpcomingEventsFromDb(6);
@@ -32,7 +28,6 @@ export default async function RecentEvents() {
         events = dbEvents;
       }
     } catch {
-      // Ignore fallback error
     }
   }
 

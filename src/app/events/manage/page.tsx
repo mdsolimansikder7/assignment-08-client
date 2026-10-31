@@ -1,4 +1,3 @@
-// Manage Events page: table on desktop, cards on mobile, with update and delete.
 "use client";
 
 import { useEffect, useState } from "react";

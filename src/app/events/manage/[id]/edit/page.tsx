@@ -1,4 +1,3 @@
-// Edit Event page: pre-filled from the backend, with update handling.
 "use client";
 
 import { useEffect, useState } from "react";

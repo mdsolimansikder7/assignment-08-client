@@ -1,4 +1,3 @@
-// Avatar with hover name tooltip and dropdown menu (logged in).
 "use client";
 
 import { useState } from "react";
@@ -12,7 +11,6 @@ export default function UserMenu({ user }: { user: User }) {
 
   return (
     <div className="relative group">
-      {/* Tooltip with display name */}
       <span className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-primary px-2 py-1 text-xs text-primary-foreground opacity-0 transition-opacity group-hover:opacity-100">
         {user.name}
       </span>

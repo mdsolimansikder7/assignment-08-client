@@ -1,4 +1,3 @@
-// Grid of feature cards describing the platform.
 import { CalendarPlus, HandHeart, Settings, CalendarClock, Users, Sparkles } from "lucide-react";
 import { FEATURES } from "@/lib/constants";
 import SectionHeading from "@/components/shared/SectionHeading";

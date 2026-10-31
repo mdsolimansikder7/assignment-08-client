@@ -1,4 +1,3 @@
-// Empty state shown when a list has no items.
 type EmptyStateProps = {
   title: string;
   description?: string;

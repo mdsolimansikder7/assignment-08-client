@@ -1,4 +1,3 @@
-// Join button with default, hover, and disabled "Joined" looks.
 "use client";
 
 import { useEffect, useState } from "react";

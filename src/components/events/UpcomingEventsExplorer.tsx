@@ -1,4 +1,3 @@
-// Interactive explorer for upcoming events with search input + button and sort dropdown.
 "use client";
 
 import { useMemo, useState } from "react";
@@ -30,7 +29,6 @@ export default function UpcomingEventsExplorer({
     setSubmittedQuery("");
   };
 
-  // Filter events based on active submitted search query
   const filteredEvents = useMemo(() => {
     if (!submittedQuery) return initialEvents;
     const query = submittedQuery.toLowerCase();
@@ -43,7 +41,6 @@ export default function UpcomingEventsExplorer({
     );
   }, [initialEvents, submittedQuery]);
 
-  // Sort filtered events
   const sortedEvents = useMemo(() => {
     const list = [...filteredEvents];
     switch (sortBy) {
@@ -74,9 +71,7 @@ export default function UpcomingEventsExplorer({
 
   return (
     <div>
-      {/* Search and Sort Toolbar */}
       <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        {/* Search input + Search button */}
         <form onSubmit={handleSearch} className="flex flex-1 items-center gap-2 max-w-xl">
           <div className="relative flex-1">
             <Search className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted" />
@@ -85,7 +80,6 @@ export default function UpcomingEventsExplorer({
               value={searchInput}
               onChange={(e) => {
                 setSearchInput(e.target.value);
-                // If user clears the input completely, reset the search automatically
                 if (!e.target.value.trim() && submittedQuery) {
                   setSubmittedQuery("");
                 }
@@ -109,7 +103,6 @@ export default function UpcomingEventsExplorer({
           </Button>
         </form>
 
-        {/* Sort dropdown ("sortdown") */}
         <div className="flex items-center gap-2 self-start md:self-auto shrink-0">
           <div className="flex items-center gap-1.5 text-sm text-muted">
             <ArrowUpDown className="h-4 w-4" />
@@ -129,7 +122,6 @@ export default function UpcomingEventsExplorer({
         </div>
       </div>
 
-      {/* Active Search Summary */}
       {submittedQuery && (
         <div className="mb-6 flex items-center justify-between rounded-xl bg-card border border-border px-4 py-2.5 text-sm">
           <p className="text-muted">
@@ -145,7 +137,6 @@ export default function UpcomingEventsExplorer({
         </div>
       )}
 
-      {/* 3-column Grid of Events */}
       {sortedEvents.length === 0 ? (
         <EmptyState
           title="No events match your search"

@@ -1,4 +1,3 @@
-// Delete button with SweetAlert confirmation and a success toast.
 "use client";
 
 import Swal from "sweetalert2";
@@ -7,7 +6,6 @@ import Button from "@/components/shared/Button";
 
 export default function DeleteButton({ onDelete }: { onDelete: () => Promise<void> }) {
   const handleClick = async () => {
-    // Read current theme from CSS variables for SweetAlert styling
     const isDark = typeof document !== "undefined" && document.documentElement.classList.contains("dark");
     const style = typeof window !== "undefined" ? getComputedStyle(document.documentElement) : null;
     const background = style?.getPropertyValue("--card").trim() || (isDark ? "#1C1C2E" : "#FFFFFF");

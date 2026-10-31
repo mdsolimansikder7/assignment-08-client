@@ -1,4 +1,3 @@
-// Loading skeleton for the Recent Upcoming Events section.
 import Skeleton from "@/components/shared/Skeleton";
 import EventGridSkeleton from "@/components/shared/EventGridSkeleton";
 

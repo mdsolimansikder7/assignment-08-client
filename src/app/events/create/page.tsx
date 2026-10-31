@@ -1,4 +1,3 @@
-// Create Event page: real create call, with auth guard.
 "use client";
 
 import { useRouter } from "next/navigation";

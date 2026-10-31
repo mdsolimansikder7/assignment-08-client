@@ -1,4 +1,3 @@
-// Reusable event form used by Create and Edit pages.
 "use client";
 
 import { useState } from "react";
@@ -8,6 +7,7 @@ import { EVENT_TYPES } from "@/lib/constants";
 import { todayString } from "@/lib/utils";
 import type { EventType } from "@/types/event";
 import Button from "@/components/shared/Button";
+import styles from "./EventForm.module.css";
 
 export type FormValues = {
   title: string;
@@ -172,7 +172,7 @@ export default function EventForm({
           min={todayString()}
           value={values.eventDate}
           onChange={(e) => handleChange("eventDate", e.target.value)}
-          className={inputClass}
+          className={`${inputClass} ${styles.dateInput}`}
         />
         {errors.eventDate && <p className="mt-1 text-xs text-red-600 dark:text-red-400">{errors.eventDate}</p>}
       </div>

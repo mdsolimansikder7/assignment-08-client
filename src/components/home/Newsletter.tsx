@@ -1,4 +1,3 @@
-// Newsletter signup (design only). Shows a harmless toast on submit.
 "use client";
 
 import { useState } from "react";

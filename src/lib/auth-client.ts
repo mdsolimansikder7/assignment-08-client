@@ -1,4 +1,3 @@
-// Better Auth client (used inside components).
 "use client";
 
 import { createAuthClient } from "better-auth/react";

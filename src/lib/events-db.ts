@@ -1,4 +1,3 @@
-// Server-only MongoDB helper for upcoming events using MongoDB's .limit() operator.
 import { MongoClient } from "mongodb";
 import type { CommunityEvent } from "@/types/event";
 import { todayString } from "@/lib/utils";
@@ -17,11 +16,6 @@ async function getDb() {
   return client.db(dbName);
 }
 
-/**
- * Fetches upcoming events directly from MongoDB using .limit() operator.
- * Filters events where eventDate >= today, sorts by eventDate ascending (nearest first),
- * and applies .limit(count).
- */
 export async function getUpcomingEventsFromDb(count = 6): Promise<CommunityEvent[]> {
   try {
     const db = await getDb();

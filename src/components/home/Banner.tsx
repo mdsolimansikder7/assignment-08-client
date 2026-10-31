@@ -1,4 +1,3 @@
-// Hero banner with headline, supporting text, and two call-to-action buttons.
 import Link from "next/link";
 import Image from "next/image";
 import Button from "@/components/shared/Button";

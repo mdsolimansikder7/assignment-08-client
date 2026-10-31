@@ -1,4 +1,3 @@
-// Real auth context backed by Better Auth.
 "use client";
 
 import { createContext } from "react";

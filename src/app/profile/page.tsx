@@ -1,4 +1,3 @@
-// Profile page: view the logged-in user and update name / profile picture.
 "use client";
 
 import { useState } from "react";

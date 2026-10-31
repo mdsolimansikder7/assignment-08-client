@@ -1,4 +1,4 @@
-// Footer with quick links, causes, contact, and social icons.
+
 import Link from "next/link";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -21,7 +21,6 @@ export default function Footer() {
     <footer className="bg-primary text-white dark:bg-card dark:text-card-foreground dark:border-t dark:border-border">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-4">
-          {/* Brand */}
           <div>
             <div className="flex items-center gap-2">
               <LogoMark size={32} />
@@ -32,7 +31,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Quick links */}
           <div>
             <h4 className="font-heading font-semibold text-highlight">Quick Links</h4>
             <ul className="mt-3 space-y-2 text-sm">
@@ -44,7 +42,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Popular causes */}
           <div>
             <h4 className="font-heading font-semibold text-highlight">Popular Causes</h4>
             <ul className="mt-3 space-y-2 text-sm text-white/80 dark:text-muted">
@@ -61,7 +58,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact + social */}
           <div>
             <h4 className="font-heading font-semibold text-highlight">Contact</h4>
             <ul className="mt-3 space-y-2 text-sm text-white/80 dark:text-muted">

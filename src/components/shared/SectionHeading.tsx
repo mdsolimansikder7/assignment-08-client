@@ -1,4 +1,3 @@
-// Reusable section heading used on every page.
 type SectionHeadingProps = {
   title: string;
   subtitle?: string;

@@ -1,4 +1,3 @@
-// Guard for private pages: shows a spinner while loading, redirects when logged out.
 "use client";
 
 import { useEffect } from "react";

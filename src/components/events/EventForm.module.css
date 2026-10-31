@@ -1,0 +1,20 @@
+.dateInput {
+  color-scheme: light;
+}
+
+:global(.dark) .dateInput {
+  color-scheme: dark;
+}
+
+.dateInput::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.dateInput::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+:global(.dark) .dateInput::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}

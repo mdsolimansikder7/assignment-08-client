@@ -1,4 +1,3 @@
-// Reusable button. Two variants: primary (coral) and outline (indigo border).
 import type { ButtonHTMLAttributes } from "react";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {

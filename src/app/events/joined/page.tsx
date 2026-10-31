@@ -1,4 +1,3 @@
-// Joined Events page: events joined by the current user, sorted by date.
 "use client";
 
 import { useEffect, useState } from "react";

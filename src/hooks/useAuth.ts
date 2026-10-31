@@ -1,4 +1,3 @@
-// Hook to read the auth context.
 "use client";
 
 import { useContext } from "react";

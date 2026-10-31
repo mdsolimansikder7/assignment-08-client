@@ -1,4 +1,3 @@
-// Theme provider using next-themes. Wraps children with system/light/dark support.
 "use client";
 
 import { ThemeProvider as NextThemesProvider } from "next-themes";

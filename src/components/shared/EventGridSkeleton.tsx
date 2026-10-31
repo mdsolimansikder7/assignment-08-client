@@ -1,4 +1,3 @@
-// Loading skeleton for a responsive grid of event cards.
 import Skeleton from "@/components/shared/Skeleton";
 
 export default function EventGridSkeleton({ count = 6 }: { count?: number }) {
