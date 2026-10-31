@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Light-mode variables (default — current design, untouched) ── */
+:root {
+  --background: #FFF8F0;
+  --foreground: #1E1E2F;
+  --card: #FFFFFF;
+  --card-foreground: #1E1E2F;
+  --muted: #5C5F7A;
+  --muted-foreground: #5C5F7A;
+  --border: #E5E5E5;
+  --primary: #2B2D6E;
+  --primary-foreground: #FFFFFF;
+  --accent: #FF6B4A;
+  --accent-foreground: #FFFFFF;
+  --highlight: #FFC857;
+  --success: #2E9E6B;
+  --input: #FFFFFF;
+  --skeleton: #E5E5E5;
+  --heading: #2B2D6E;
+}
+
+/* ── Dark-mode variables ── */
+.dark {
+  --background: #0F1020;
+  --foreground: #F4F1EA;
+  --card: #181A2E;
+  --card-foreground: #F4F1EA;
+  --muted: #9A9DB8;
+  --muted-foreground: #9A9DB8;
+  --border: #2A2D4A;
+  --primary: #9B9DF5;
+  --primary-foreground: #0F1020;
+  --accent: #FF6B4A;
+  --accent-foreground: #FFFFFF;
+  --highlight: #FFC857;
+  --success: #3FB97E;
+  --input: #1F2238;
+  --skeleton: #2A2D4A;
+  --heading: #F4F1EA;
+}
+
+/* ── Expose variables as Tailwind theme tokens ── */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-highlight: var(--highlight);
+  --color-success: var(--success);
+  --color-input: var(--input);
+  --color-skeleton: var(--skeleton);
+  --color-heading: var(--heading);
+
+  /* Keep legacy token names mapped */
+  --color-cream: var(--background);
+  --color-ink: var(--foreground);
+
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-poppins);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* ── Dark-mode form inputs ── */
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: var(--input);
+  color: var(--foreground);
+  border-color: var(--border);
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: var(--muted-foreground);
+}
+
+/* Dark-mode date / select picker indicator */
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+/* SweetAlert dark overrides */
+.dark .swal2-popup {
+  background-color: var(--card) !important;
+  color: var(--foreground) !important;
+}
