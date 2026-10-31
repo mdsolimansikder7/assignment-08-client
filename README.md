@@ -2,6 +2,10 @@
 
 Humanova is a community-focused event platform that helps people discover, create, and participate in local social-service activities. It brings volunteers and organizers together to make positive changes in their communities.
 
+## 🌐 Live Website
+
+**[Visit Humanova — Live Demo](https://humanova7.vercel.app/)**
+
 ## ✨ Features
 
 - **Discover Events:** Browse upcoming community events and explore event details.
@@ -19,6 +23,7 @@ Humanova is a community-focused event platform that helps people discover, creat
 ## 🧰 Tech Stack
 
 ### Frontend
+
 - Next.js 16 (App Router)
 - React 19
 - TypeScript
@@ -30,6 +35,7 @@ Humanova is a community-focused event platform that helps people discover, creat
 - SweetAlert2
 
 ### Authentication & Database
+
 - Better Auth
 - MongoDB
 - JWT Authentication
@@ -161,7 +167,7 @@ Protected backend routes should validate JWT tokens before allowing authenticate
 
 ## 🌐 Deployment
 
-The frontend can be deployed using [Vercel](https://vercel.com/).
+The frontend is deployed using [Vercel](https://vercel.com/).
 
 1. Import the GitHub repository into Vercel.
 2. Configure the required environment variables.
@@ -173,15 +179,16 @@ The frontend can be deployed using [Vercel](https://vercel.com/).
 
 Never expose MongoDB credentials, OAuth secrets, or authentication secrets in client-side code.
 
+## 🔗 Related Repositories
+
+- **Frontend:** [Humanova Client](https://github.com/mdsolimansikder7/assignment-08-client)
+- **Backend:** [Humanova Server](https://github.com/mdsolimansikder7/assignment-08-server)
+
 ## 👨‍💻 Author
 
 **Md. Soliman Sikder**
 
 - GitHub: [@mdsolimansikder7](https://github.com/mdsolimansikder7)
-
-## 📌 Repository
-
-[View Humanova on GitHub](https://github.com/mdsolimansikder7/assignment-08-client)
 
 ---
 
