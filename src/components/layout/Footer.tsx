@@ -62,8 +62,8 @@ export default function Footer() {
             <h4 className="font-heading font-semibold text-highlight">Contact</h4>
             <ul className="mt-3 space-y-2 text-sm text-white/80 dark:text-muted">
               <li>hello@humanova.org</li>
-              <li>+1 (555) 010-2026</li>
-              <li>123 Community Lane, Springfield</li>
+              <li>+880 1700-000000</li>
+              <li>House 12, Road 5, Dhanmondi, Dhaka 1209</li>
             </ul>
             <div className="mt-4 flex gap-3">
               <a href="#" aria-label="Facebook" className="hover:text-accent"><FaFacebook className="h-5 w-5" /></a>
