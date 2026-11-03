@@ -2,49 +2,90 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { Plus, List, CalendarCheck, User as UserIcon } from "lucide-react";
-import type { User } from "@/types/user";
+import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
+import LogoMark from "@/components/shared/LogoMark";
+import { useAuth } from "@/hooks/useAuth";
+import { SITE_NAME } from "@/lib/constants";
+import UserMenu from "./UserMenu";
+import ThemeToggle from "@/components/shared/ThemeToggle";
+import Button from "@/components/shared/Button";
 
-export default function UserMenu({ user }: { user: User }) {
-  const [open, setOpen] = useState(false);
+export default function Navbar() {
+  const { user, logout } = useAuth();
+  const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const isActive = (href: string) => pathname === href;
+
+  const linkClass = (href: string) =>
+    `text-sm font-medium transition-colors ${
+      isActive(href) ? "text-accent" : "text-primary hover:text-accent"
+    }`;
 
   return (
-    <div className="relative group">
-      <span className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-primary px-2 py-1 text-xs text-primary-foreground opacity-0 transition-opacity group-hover:opacity-100">
-        {user.name}
-      </span>
+    <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        <Link href="/" className="flex items-center gap-2">
+          <LogoMark size={32} />
+          <span className="font-heading text-xl font-bold text-primary">{SITE_NAME}</span>
+        </Link>
 
-      <button
-        onClick={() => setOpen((v) => !v)}
-        className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-primary"
-        aria-label="User menu"
-      >
-        {user.photoURL ? (
-          <Image src={user.photoURL} alt={user.name} fill className="object-cover" />
-        ) : (
-          <span className="flex h-full w-full items-center justify-center bg-primary text-primary-foreground font-semibold">
-            {user.name.charAt(0).toUpperCase()}
-          </span>
-        )}
-      </button>
+        {/* Desktop */}
+        <div className="hidden items-center gap-6 md:flex">
+          <Link href="/events" className={linkClass("/events")}>
+            Upcoming Events
+          </Link>
 
-      {open && (
-        <div className="absolute right-0 mt-2 w-44 rounded-xl border border-border bg-card p-2 shadow-lg">
-          <Link href="/events/create" className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-card-foreground hover:bg-background" onClick={() => setOpen(false)}>
-            <Plus className="h-4 w-4" /> Create Event
-          </Link>
-          <Link href="/events/manage" className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-card-foreground hover:bg-background" onClick={() => setOpen(false)}>
-            <List className="h-4 w-4" /> Manage Events
-          </Link>
-          <Link href="/events/joined" className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-card-foreground hover:bg-background" onClick={() => setOpen(false)}>
-            <CalendarCheck className="h-4 w-4" /> Joined Events
-          </Link>
-          <Link href="/profile" className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-card-foreground hover:bg-background" onClick={() => setOpen(false)}>
-            <UserIcon className="h-4 w-4" /> Profile
-          </Link>
+          <div className="flex items-center gap-4">
+            <ThemeToggle />
+            {user ? (
+              <div className="flex items-center gap-4">
+                <UserMenu user={user} />
+                <Button variant="outline" onClick={logout}>
+                  Logout
+                </Button>
+              </div>
+            ) : (
+              <Link href="/login">
+                <Button variant="primary">Login</Button>
+              </Link>
+            )}
+          </div>
+        </div>
+
+        {/* Mobile: Theme toggle + Profile (login thakle) + Hamburger */}
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          {user && <UserMenu user={user} />}
+          <button
+            className="text-primary"
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+      </nav>
+
+      {mobileOpen && (
+        <div className="border-t border-border bg-background px-4 py-4 md:hidden">
+          <div className="flex flex-col gap-3">
+            <Link href="/events" className={linkClass("/events")} onClick={() => setMobileOpen(false)}>
+              Upcoming Events
+            </Link>
+            {user ? (
+              <Button variant="outline" onClick={() => { logout(); setMobileOpen(false); }}>
+                Logout
+              </Button>
+            ) : (
+              <Link href="/login" onClick={() => setMobileOpen(false)}>
+                <Button variant="primary">Login</Button>
+              </Link>
+            )}
+          </div>
         </div>
       )}
-    </div>
+    </header>
   );
 }
