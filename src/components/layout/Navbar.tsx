@@ -31,6 +31,7 @@ export default function Navbar() {
           <span className="font-heading text-xl font-bold text-primary">{SITE_NAME}</span>
         </Link>
 
+        {/* Desktop */}
         <div className="hidden items-center gap-6 md:flex">
           <Link href="/events" className={linkClass("/events")}>
             Upcoming Events
@@ -53,13 +54,17 @@ export default function Navbar() {
           </div>
         </div>
 
-        <button
-          className="md:hidden text-primary"
-          onClick={() => setMobileOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        {/* Mobile: Theme toggle + Hamburger */}
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <button
+            className="text-primary"
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </nav>
 
       {mobileOpen && (
@@ -68,10 +73,6 @@ export default function Navbar() {
             <Link href="/events" className={linkClass("/events")} onClick={() => setMobileOpen(false)}>
               Upcoming Events
             </Link>
-            <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-foreground">Theme</span>
-              <ThemeToggle />
-            </div>
             {user ? (
               <>
                 <Link href="/events/create" className={linkClass("/events/create")} onClick={() => setMobileOpen(false)}>Create Event</Link>
