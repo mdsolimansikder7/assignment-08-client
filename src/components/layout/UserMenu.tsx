@@ -11,10 +11,6 @@ export default function UserMenu({ user }: { user: User }) {
 
   return (
     <div className="relative group">
-      <span className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-primary px-2 py-1 text-xs text-primary-foreground opacity-0 transition-opacity group-hover:opacity-100">
-        {user.name}
-      </span>
-
       <button
         onClick={() => setOpen((v) => !v)}
         className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-primary"

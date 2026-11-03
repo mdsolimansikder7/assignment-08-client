@@ -28,7 +28,7 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
           <LogoMark size={32} />
-          <span className="font-heading text-xl font-bold text-primary">{SITE_NAME}</span>
+          <span className="font-heading text-lg font-bold text-primary sm:text-xl">{SITE_NAME}</span>
         </Link>
 
         {/* Desktop */}
@@ -54,9 +54,10 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile: Theme toggle + Hamburger */}
+        {/* Mobile: Theme toggle + Avatar (login thakle) + Hamburger */}
         <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />
+          {user && <UserMenu user={user} />}
           <button
             className="text-primary"
             onClick={() => setMobileOpen((v) => !v)}
@@ -74,15 +75,9 @@ export default function Navbar() {
               Upcoming Events
             </Link>
             {user ? (
-              <>
-                <Link href="/events/create" className={linkClass("/events/create")} onClick={() => setMobileOpen(false)}>Create Event</Link>
-                <Link href="/events/manage" className={linkClass("/events/manage")} onClick={() => setMobileOpen(false)}>Manage Events</Link>
-                <Link href="/events/joined" className={linkClass("/events/joined")} onClick={() => setMobileOpen(false)}>Joined Events</Link>
-                <Link href="/profile" className={linkClass("/profile")} onClick={() => setMobileOpen(false)}>Profile</Link>
-                <Button variant="outline" onClick={() => { logout(); setMobileOpen(false); }}>
-                  Logout
-                </Button>
-              </>
+              <Button variant="outline" onClick={() => { logout(); setMobileOpen(false); }}>
+                Logout
+              </Button>
             ) : (
               <Link href="/login" onClick={() => setMobileOpen(false)}>
                 <Button variant="primary">Login</Button>
